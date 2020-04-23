@@ -1,0 +1,40 @@
+#Xiaomi Air Purifier Pro
+- platform: template
+  sensors:
+    xiaomi_airpurifier_temp:
+      friendly_name: "Nhiệt độ"
+      value_template: "{{ state_attr('fan.mi_air_purifier', 'temperature') }}"
+      unit_of_measurement: "°C"
+      device_class: "temperature"
+    xiaomi_airpurifier_humidity:
+      friendly_name: "Độ ẩm"
+      value_template: "{{ state_attr('fan.mi_air_purifier', 'humidity') }}"
+      unit_of_measurement: "%"
+      device_class: "humidity"
+    xiaomi_airpurifier_air_quality_pm25:
+      friendly_name: "Chất lượng không khí"
+      value_template: "{{ state_attr('fan.mi_air_purifier', 'aqi') }}"
+      unit_of_measurement: "μg/m³"
+      icon_template: "mdi:weather-fog"
+    xiaomi_airpurifie_fan_mode:
+        friendly_name: "Chế độ"
+        value_template: "{{ states.fan.mi_air_purifier.attributes.speed }}"
+    xiaomi_airpurifie_fan_speed2:
+        friendly_name: "Quạt 2"
+        value_template: "{{ states.fan.mi_air_purifier.attributes.motor2_speed }}"
+        unit_of_measurement: "rpm"
+        icon_template: "mdi:speedometer"
+    xiaomi_airpurifie_filter_hours_used:
+        friendly_name: "Giờ sử dụng"
+        unit_of_measurement: 'h'
+        value_template: "{{ states.fan.mi_air_purifier.attributes.filter_hours_used }}"
+    xiaomi_airpurifier_speed:
+      friendly_name: "Tốc độ quay"
+      value_template: "{{ state_attr('fan.mi_air_purifier', 'motor_speed') }}"
+      unit_of_measurement: "rpm"
+      icon_template: "mdi:speedometer"
+    xiaomi_airpurifier_filter_remaining:
+      friendly_name: "Filter remaining"
+      value_template: "{{ state_attr('fan.mi_air_purifier', 'filter_life_remaining') }}"
+      unit_of_measurement: "%"
+      icon_template: "mdi:heart-outline"
