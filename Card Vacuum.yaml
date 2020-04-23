@@ -1,0 +1,216 @@
+elements:
+  - icon: 'mdi:bell-ring'
+    style:
+      color: '#3090C7'
+      left: 80%
+      top: 90%
+    tap_action:
+      action: call-service
+      service: vacuum.locate
+      service_data:
+        entity_id: vacuum.be_giup_viec
+    type: icon
+  - entity: vacuum.be_giup_viec
+    icon: 'mdi:crosshairs'
+    style:
+      color: '#3090C7'
+      left: 65%
+      top: 90%
+    tap_action:
+      action: call-service
+      service: vacuum.clean_spot
+      service_data:
+        entity_id: vacuum.be_giup_viec
+    type: icon
+  - icon: 'mdi:home'
+    style:
+      color: '#3090C7'
+      left: 50%
+      top: 90%
+    tap_action:
+      action: call-service
+      service: vacuum.return_to_base
+      service_data:
+        entity_id: vacuum.be_giup_viec
+    type: icon
+  - entity: vacuum.be_giup_viec
+    icon: 'mdi:stop'
+    style:
+      color: '#3090C7'
+      left: 35%
+      top: 90%
+    tap_action:
+      action: call-service
+      service: vacuum.stop
+      service_data:
+        entity_id: vacuum.be_giup_viec
+    type: icon
+  - icon: 'mdi:play'
+    style:
+      color: '#3090C7'
+      left: 20%
+      top: 90%
+    tap_action:
+      action: call-service
+      service: vacuum.start
+      service_data:
+        entity_id: vacuum.be_giup_viec
+    type: icon
+  - entity: sensor.vacuum_operation
+    style:
+      background-color: '#3090C7'
+      border-color: 'rgb(34, 154, 210)'
+      border-radius: 6px
+      color: 'rgb(255, 255, 255)'
+      font-family: Trebuchet MS
+      font-size: 90%
+      font-weight: bold
+      left: 1%
+      pointer-events: none
+      top: 10%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_accessories
+    style:
+      background-color: '#3090C7'
+      border-color: 'rgb(34, 154, 210)'
+      border-radius: 6px
+      color: 'rgb(255, 255, 255)'
+      font-family: Trebuchet MS
+      font-size: 90%
+      font-weight: bold
+      pointer-events: none
+      right: 1%
+      top: 10%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: vacuum.be_giup_viec
+    style:
+      background-color: '#cccccc'
+      border-color: 'rgb(34, 154, 210)'
+      border-radius: 6px
+      color: 'rgb(255, 255, 255)'
+      font-family: Trebuchet MS
+      font-size: 150%
+      font-weight: bold
+      right: 38%
+      top: 14%
+      transform: 'translate(0%,-30%)'
+    tap_action: more-info
+    type: state-label
+  - entity: sensor.vacuum_cleanmainbrush
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-right-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 76%
+      font-weight: bold
+      pointer-events: none
+      right: 1%
+      top: 35%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_cleansidebrush
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-right-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 76%
+      font-weight: bold
+      pointer-events: none
+      right: 1%
+      top: 45%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_cleanfilter
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-right-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 76%
+      font-weight: bold
+      opacity: 0.8
+      pointer-events: none
+      right: 1%
+      top: 55%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_sensordirtyleft
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-right-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 76%
+      font-weight: bold
+      pointer-events: none
+      right: 1%
+      top: 65%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_status
+    style:
+      border-color: '#3090C7'
+      border-left-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 80%
+      font-weight: bold
+      left: 1%
+      pointer-events: none
+      top: 40%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_battery
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-left-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 80%
+      font-weight: bold
+      left: 1%
+      pointer-events: none
+      top: 50%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_fan_speed
+    style:
+      border-color: 'rgb(34, 154, 210)'
+      border-left-style: solid
+      color: '#ffffff'
+      font-family: Trebuchet MS
+      font-size: 80%
+      font-weight: bold
+      left: 1%
+      pointer-events: none
+      top: 60%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_cleaned_area
+    style:
+      color: '#84a6ba'
+      font-family: Trebuchet MS
+      font-size: 80%
+      font-weight: bold
+      left: 25%
+      pointer-events: none
+      top: 79%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+  - entity: sensor.vacuum_cleaning_time
+    style:
+      color: '#84a6ba'
+      font-family: Trebuchet MS
+      font-size: 80%
+      font-weight: bold
+      left: 50%
+      pointer-events: none
+      top: 79%
+      transform: 'translate(0%,-50%)'
+    type: state-label
+image: /local/Picture/vacuum1.jpg
+type: picture-elements
